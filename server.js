@@ -1,4 +1,5 @@
 const http = require('http')
+
 const fs = require('fs')
 
 const server = http.createServer((req,res)=>{
@@ -18,3 +19,8 @@ const server = http.createServer((req,res)=>{
 
 	res.end()  
 })
+
+server.listen(3000,()=>{
+	console.log('server is listen at port 3000')
+})
+
