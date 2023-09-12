@@ -8,16 +8,17 @@ const server = http.createServer((req,res)=>{
 		res.writeHead(200,{"Content-Type":'text/html'})
 			res.writeHead(200,{"Content-Type":'text/html'})
 			res.write(data)
+			res.end()
 		})
 	} else if(req.url==='/style.css') {
 		fs.readFile('./style.css',(err,data)=>{
 			res.writeHead(200,{"Content-Type":'text/css'})
-				res.writeHead(200,{"Content-Type":'text/html'})
-				res.write(data)
-			})
+			res.write(data)
+			res.end()
+
+		})
 	}
 
-	res.end()  
 })
 
 server.listen(3000,()=>{
